@@ -11,7 +11,8 @@ const GetQuery1 = () => {
 const {data,isLoading,error,isError} = useQuery({
     queryKey: ["User"],
     queryFn: FetchUsersHandler,
-   gcTime : 500   // catch Time
+   gcTime : 50000,   // catch Time
+staleTime : 20000 // white this options we say dont need fetch data in background until this time
 })
 
 if (isLoading) {
