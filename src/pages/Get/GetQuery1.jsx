@@ -3,7 +3,6 @@ import { usersapi } from '../../axios/axios.users';
 import { useQuery } from '@tanstack/react-query';
 
 let FetchUsersHandler = () => {
-    console.log("get");
     return usersapi.get()
 }
 
@@ -12,7 +11,7 @@ const GetQuery1 = () => {
 const {data,isLoading,error,isError} = useQuery({
     queryKey: ["User"],
     queryFn: FetchUsersHandler,
-    retry: false
+   gcTime : 500   // catch Time
 })
 
 if (isLoading) {
