@@ -13,6 +13,8 @@ const Home = () => {
                 <hr />
                 <Link to="/trasformdata">TrasFormdata Query Page 😎</Link>
                 <hr />
+                <Link to="/parallel">Parallel Query Page 😎</Link>
+                <hr />
             </li>
         </ul>
     );

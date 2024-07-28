@@ -1,6 +1,7 @@
 import React from 'react';
 import { usersapi } from '../../axios/axios.users';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 let FetchUsersHandler = () => {
     return usersapi.get()
@@ -30,7 +31,10 @@ if (isError) {
         <ul>
             {data?.data.map(user => {
                 return (
-                    <li key={user.id}>{user.name}</li>
+                    <>
+                    <Link to={`/UsersDetails/${user.id}`} key={user.id}>{user.name}😎</Link>
+                    <hr />
+                    </>
                 )
             })}
         </ul>

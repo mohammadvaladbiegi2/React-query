@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import ClickQuery from './pages/onClickQuery/ClickQuery';
 import Callbacks from './pages/listen-to-changes/listen';
 import TrasformData from './pages/Data-Transformation/TrasformData';
+import UsersDetails from './pages/dynamic-Query-by-Id/UsersDetails';
+import UsersProductPage from './pages/Parallel-Queries/users.product.page';
 
 const queryClient = new QueryClient()
 
@@ -17,6 +19,8 @@ const App = () => {
     { path: "/clickquery", element: <ClickQuery /> },
     { path: "/callback", element: <Callbacks /> },
     { path: "/trasformdata", element: <TrasformData /> },
+    { path: "/UsersDetails/:id", element: <UsersDetails /> },
+    { path: "/parallel", element: <UsersProductPage /> },
   ])
 
 
