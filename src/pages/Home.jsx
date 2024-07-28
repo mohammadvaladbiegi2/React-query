@@ -6,6 +6,13 @@ const Home = () => {
         <ul>
             <li>
                 <Link to="/getquery1">Get Users Page 😎</Link>
+                <hr />
+                <Link to="/clickquery">Click Query Page 😎</Link>
+                <hr />
+                <Link to="/callback">Callbacks Query Page 😎</Link>
+                <hr />
+                <Link to="/trasformdata">TrasFormdata Query Page 😎</Link>
+                <hr />
             </li>
         </ul>
     );
