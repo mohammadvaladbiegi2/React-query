@@ -7,7 +7,7 @@ const UsersDetails = () => {
     let queryClient = useQueryClient()
     const { id } = useParams()
 
-    const { data, isError, isLoading } = useQuery({
+    const { data, isError, isLoading,error } = useQuery({
         queryKey: ["User", id],
         queryFn: ({ queryKey }) => {
             const userid = queryKey[1]

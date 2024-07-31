@@ -10,6 +10,7 @@ import TrasformData from './pages/Data-Transformation/TrasformData';
 import UsersDetails from './pages/dynamic-Query-by-Id/UsersDetails';
 import UsersProductPage from './pages/Parallel-Queries/users.product.page';
 import DependentQueriesPage from './pages/Dependent-Queries/Sample';
+import { PaginatedQueriesPage } from './pages/pageNations/Sample.pageNations';
 
 const queryClient = new QueryClient()
 
@@ -23,6 +24,8 @@ const App = () => {
     { path: "/UsersDetails/:id", element: <UsersDetails /> },
     { path: "/parallel", element: <UsersProductPage /> },
     { path: "/dependentqueries", element: <DependentQueriesPage /> },
+    { path: "/pagenations", element: <PaginatedQueriesPage /> },
+
 
   ])
 

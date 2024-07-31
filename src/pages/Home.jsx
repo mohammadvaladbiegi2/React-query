@@ -17,6 +17,8 @@ const Home = () => {
                 <hr />
                 <Link to="/dependentqueries">DependentQueriesPage Query Page 😎</Link>
                 <hr />
+                <Link to="/pagenations">Page Nations  Page 😎</Link>
+                <hr />
             </li>
         </ul>
     );
