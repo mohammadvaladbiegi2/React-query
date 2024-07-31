@@ -11,26 +11,35 @@ const CreateUser = () => {
 
     const [Data, setData] = useState({ name: '', password: '' });
 
-    const {data:users,isLoading,isFetching} = useQuery({
+    const { data: users, isLoading, isFetching } = useQuery({
         queryKey: ['Users'],
         queryFn: () => {
             return axios.get('https://66a29560967c89168f2090ca.mockapi.io/users')
         },
-        placeholderData: keepPreviousData 
-        
+        placeholderData: keepPreviousData
+
     })
 
-    const { mutate , isSuccess,isPending } = useMutation({
+    const { mutate, isSuccess, isPending } = useMutation({
         mutationFn: () => {
             return axios.post('https://66a29560967c89168f2090ca.mockapi.io/users', Data)
         },
-        onSuccess : () => {
-            queryClient.invalidateQueries(['Users']);
+        onSuccess: (data) => {
+            // queryClient.invalidateQueries(['Users']); 
+            queryClient.setQueriesData(
+                ['Users'],
+                (oldData) => {
+                    return {
+                        ...oldData,
+                        data: [...oldData.data, data.data]
+                    }
+                }
+            )
         }
-        
+
     })
 
-   
+
 
     return (
         <div>
@@ -45,15 +54,15 @@ const CreateUser = () => {
                 onClick={mutate}
                 disabled={isPending}
             >
-                {isPending ? "wait😎😎" :'Create Todo'}
-                
+                {isPending ? "wait😎😎" : 'Create Todo'}
+
             </button>
             <ul>
                 {users?.data.map(user => (
                     <li key={user.id}>{user.name}</li>
                 ))}
             </ul>
-                {isLoading || isFetching && <h1>Loading... 😒😒😒</h1>} 
+            {isLoading  && <h1>Loading... 😒😒😒</h1>}
         </div>
     );
 }
