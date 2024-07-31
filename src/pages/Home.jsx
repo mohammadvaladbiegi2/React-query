@@ -15,6 +15,8 @@ const Home = () => {
                 <hr />
                 <Link to="/parallel">Parallel Query Page 😎</Link>
                 <hr />
+                <Link to="/dependentqueries">DependentQueriesPage Query Page 😎</Link>
+                <hr />
             </li>
         </ul>
     );

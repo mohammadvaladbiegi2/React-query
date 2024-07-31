@@ -9,6 +9,7 @@ import Callbacks from './pages/listen-to-changes/listen';
 import TrasformData from './pages/Data-Transformation/TrasformData';
 import UsersDetails from './pages/dynamic-Query-by-Id/UsersDetails';
 import UsersProductPage from './pages/Parallel-Queries/users.product.page';
+import DependentQueriesPage from './pages/Dependent-Queries/Sample';
 
 const queryClient = new QueryClient()
 
@@ -21,6 +22,8 @@ const App = () => {
     { path: "/trasformdata", element: <TrasformData /> },
     { path: "/UsersDetails/:id", element: <UsersDetails /> },
     { path: "/parallel", element: <UsersProductPage /> },
+    { path: "/dependentqueries", element: <DependentQueriesPage /> },
+
   ])
 
 
@@ -28,7 +31,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       {routs}
-      <ReactQueryDevtools />
+      <ReactQueryDevtools initialIsOpen={false}/>
     </QueryClientProvider>
   );
 }
