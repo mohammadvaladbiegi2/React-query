@@ -19,6 +19,8 @@ const Home = () => {
                 <hr />
                 <Link to="/pagenations">Page Nations  Page 😎</Link>
                 <hr />
+                <Link to="/adduser">Create New User   Page 😎</Link>
+                <hr />
             </li>
         </ul>
     );

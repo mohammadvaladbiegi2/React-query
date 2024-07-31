@@ -11,6 +11,7 @@ import UsersDetails from './pages/dynamic-Query-by-Id/UsersDetails';
 import UsersProductPage from './pages/Parallel-Queries/users.product.page';
 import DependentQueriesPage from './pages/Dependent-Queries/Sample';
 import { PaginatedQueriesPage } from './pages/pageNations/Sample.pageNations';
+import CreateUser from './pages/Post/create-User';
 
 const queryClient = new QueryClient()
 
@@ -25,6 +26,7 @@ const App = () => {
     { path: "/parallel", element: <UsersProductPage /> },
     { path: "/dependentqueries", element: <DependentQueriesPage /> },
     { path: "/pagenations", element: <PaginatedQueriesPage /> },
+    { path: "/adduser", element: <CreateUser /> },
 
 
   ])
